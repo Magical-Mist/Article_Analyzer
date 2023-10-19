@@ -47,13 +47,15 @@
     streamlit run main.py
   ```
   2. The web application will open in your browser.
-    * On the sidebar, you can enter the URLs directly.
-    * Initiate data loading and processing by clicking "Process URLs".
-    * The application informs each stage of processing it is undergoing, such as: text splitting, generating embedding vectors.
-    * The embeddings will be stored and indexed using FAISS, enhancing retrieval speed.
-    * The FAISS index will be saved in a local file path in pickle format for future use (faiss_index_store.pkl).
-    * Pose a question and receive an answer derived from pertinent articles.
-    * Articles used in image:
+  
+    - On the sidebar, you can enter the URLs directly.
+    - Initiate data loading and processing by clicking "Process URLs".
+    - The application informs each stage of processing it is undergoing, such as: text splitting, generating embedding vectors.
+    - The embeddings will be stored and indexed using FAISS, enhancing retrieval speed.
+    - The FAISS index will be saved in a local file path in pickle format for future use (faiss_index_store.pkl).
+    - Pose a question and receive an answer derived from pertinent articles.
+    - Articles used in image:
+	
       - https://www.livemint.com/market/stock-market-news/nifty-50-sensex-today-what-to-expect-from-stock-market-indices-in-trade-on-october-19-11697679420921.html
       - https://www.usatoday.com/money/blueprint/investing/stock-forecast-apple/#:~:text=Is%20Apple%20a%20long%2Dterm,12%25%20upside%20from%20current%20levels.
       - https://www.marketwatch.com/data-news/alphabet-inc-cl-a-stock-outperforms-market-despite-losses-on-the-day-36ec519a-22fefa983c23?mod=mw_quote_news
