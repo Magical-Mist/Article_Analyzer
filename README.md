@@ -1,5 +1,5 @@
 
-# Ask Away: Article Research Tool
+# Ask Away: Article Analyzer
 
 **Ask Away** is an intuitively crafted research tool, seamlessly engineered for the retrieval of information. Empowering users to input article URLs and pose inquiries, it facilitates the extraction of relevant insights from the articles with utmost ease and efficiency.
 

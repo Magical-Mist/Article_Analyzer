@@ -12,6 +12,7 @@ from langchain.vectorstores import FAISS
 # Accessing all the environment variables from .env file (openai api key)
 load_dotenv()
 
+# Creating session variables to keep track of the urls entered
 if 'urls' not in st.session_state:
     st.session_state["urls"] = []
     st.session_state["i"] = 1
@@ -25,6 +26,7 @@ file_path = "faiss_index_store.pkl"
 url_container = st.sidebar.container()
 col1, col2 = st.sidebar.columns(2)
 
+# Displaying URL fields
 if len(st.session_state['urls'])>1:
     for url in st.session_state["urls"]:
         url_text = url_container.text_input(f"URL {url['index']}", key=url['index'], value=url['value'])
@@ -37,6 +39,7 @@ elif st.session_state.i==1:
     urls.append(url)
 
 def add_URL(st):
+    '''Adding new URL field'''
     global url_container
     if(st.session_state.i >= 1 and st.session_state["urls"] and st.session_state["urls"][st.session_state["i"]-1]["value"]):
         st.session_state.i += 1
@@ -50,8 +53,8 @@ process_url_clicked = col2.button("Process URLs")
 main_placeholder = st.empty()
 
 if process_url_clicked:
-    # Loading data from URLs specified
-    # browse https://httpbin.org/get to get your user-agent or remove headers
+    # Loading data from URLs entered
+    # browse https://httpbin.org/get to get your user-agent or remove headers parameter
     loader = UnstructuredURLLoader(urls=urls, headers={"User-Agent": "enter your user-agent"})
     main_placeholder.text("Data Loading...⏳")
     data = loader.load()
